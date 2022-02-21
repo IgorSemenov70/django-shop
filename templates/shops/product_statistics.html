@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Статистика товаров' %}{% endblock %}
+</head>
+<body>
+    {% block content %}
+        <h2>{% trans 'Наиболее продаваемые товары' %}</h2>
+        <ol>
+        {% for product in products %}
+            <li>
+                <p>{% trans 'Название товара' %}: {{ product.name }}</p>
+                <p>{% trans 'Куплено' %}: {{ product.max_quantity }} шт.</p>
+            </li>
+        {% endfor %}
+        </ol>
+        <p>
+            <a href="{% url 'shops_and_product_list' %}">{% trans 'На главную' %}</a>
+        </p>
+    {% endblock %}
+</body>
+</html>

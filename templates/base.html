@@ -1,0 +1,45 @@
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="{% trans 'Сменить язык' %}">
+        </form>
+    </header>
+    <h2>{% block section %}{% endblock %}</h2>
+    <div>
+    {% with total_items=cart|length %}
+        {% if cart|length > 0 %}
+            <p>
+                {% trans 'Ваша корзина:' %}
+                <a href="{% url "cart_detail" %}">
+                    {{ total_items }} {% trans 'товар' %}, {% trans 'на сумму:' %} {{ cart.get_total_price }} ₽
+                </a>
+            </p>
+        {% else %}
+            <p>{% trans 'Ваша корзина пуста' %}</p>
+        {% endif %}
+    {% endwith %}
+    </div>
+    <div>{% block content %}{% endblock %}</div>
+</body>
+</html>

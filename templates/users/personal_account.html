@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load cache %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Личный кабинет' %}{% endblock %}
+</head>
+<body>
+    {% block section %}{% trans 'Личный кабинет программы лояльности' %}{% endblock %}
+    {% block content %}
+    {% if request.user.is_authenticated %}
+        <p>{% trans 'Логин' %}: {{request.user.username}}</p>
+        <p>{% trans 'Имя' %}: {{request.user.first_name}}</p>
+        <p>{% trans 'Фамилия' %}: {{request.user.last_name}}</p>
+        <p>{% trans 'Город' %}: {{ request.user.city }}</p>
+        <p>{% trans 'Адресс' %}: {{ request.user.address }}</p>
+        <p>{% trans 'Индекс' %}: {{ request.user.postal_code }}</p>
+        <p>{% trans 'Электронная почта' %}: {{request.user.email}}</p>
+        <p>{% trans 'Телефон' %}: {{ request.user.phone }}</p>
+        <p>{% trans 'Статус' %}: {{ request.user.status }}</p>
+        <p>{% trans 'Баланс' %}: {{ request.user.balance }} ₽</p>
+        <a href="{% url 'balance' %}">{% trans 'Пополнить баланс' %}</a>
+        {% if promotions %}
+        <h3>
+            {% trans 'Акции' %}
+        </h3>
+            <ul>
+                {% for promotion in promotions %}
+                    <li>
+                        <p>{% trans 'Название:' %} {{ promotion.name }}</p>
+                        <p>{% trans 'Описание:' %} {{ promotion.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h3>{% trans 'Акций нет' %}</h3>
+        {% endif %}
+
+        {% if offers %}
+        <h3>
+            {% trans 'Предложения' %}
+        </h3>
+            <ul>
+                {% for offer in offers %}
+                    <li>
+                        <p>{% trans 'Название:' %} {{ offer.name }}</p>
+                        <p>{% trans 'Описание:' %} {{ offer.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h3>{% trans 'Предложений нет' %}</h3>
+        {% endif %}
+
+        {% cache 500 orders_history %}
+            <h3>
+                {% trans 'История покупок' %}
+            </h3>
+                <ul>
+                {% for order in orders_history %}
+                    <li>
+                        <p>{% trans 'Товар:' %} {{ order.product }}</p>
+                        <p>{% trans 'Цена:' %} {{ order.price }} ₽</p>
+                        <p>{% trans 'Количество:' %} {{ order.quantity }}</p>
+                    </li>
+                {% endfor %}
+                </ul>
+        {% endcache %}
+    {% else %}
+        <div>{% trans 'Для просмотра личной информации' %},
+        <a href="{% url 'login' %}">{% trans 'авторизуйтесь' %}</a> {% trans 'или' %}
+        <a href="{% url 'register' %}">{% trans 'зарегистрируйтесь на сайте' %}</a>
+        </div>
+    {% endif %}
+    <a href="{% url 'shops_and_product_list' %}">{% trans 'На главную' %}</a>
+    {% endblock %}
+</body>
+</html>

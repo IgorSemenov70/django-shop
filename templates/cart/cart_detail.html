@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Корзина покупателя' %}{% endblock %}
+</head>
+<body>
+    {% block section %}{% trans 'Ваша корзина покупателя:' %}{% endblock %}
+    {% block content %}
+        <table>
+            <thead>
+            <tr>
+                <th>{% trans 'Товар' %}</th>
+                <th>{% trans 'Количество' %}</th>
+                <th>{% trans 'Удалить' %}</th>
+                <th>{% trans 'Цена за единицу' %}</th>
+                <th>{% trans 'Цена' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in cart %}
+                {% with product=item.product %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>
+                            <form action="{% url "cart_add" product.pk %}" method="post">
+                                {% csrf_token %}
+                                {{ item.update_quantity_form.quantity }}
+                                {{ item.update_quantity_form.update }}
+                                <input type="submit" value="{% trans 'Обновить' %}">
+                            </form>
+                        </td>
+                        <td><a href="{% url "cart_remove" product.pk %}">{% trans 'Удалить' %}</a></td>
+                        <td >{{ item.price }} ₽</td>
+                        <td >{{ item.total_price }} ₽</td>
+                    </tr>
+                {% endwith %}
+            {% endfor %}
+            <tr>
+                <td>{% trans 'Итого:' %}</td>
+                <td colspan="4"></td>
+                <td class="num">{{ cart.get_total_price }} ₽</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="{% url "shops_and_product_list" %}">{% trans 'Продолжить покупки' %}</a>
+            <a href="{% url 'order_created' %}">{% trans 'Оформить заказ' %}</a>
+        </p>
+    {% endblock %}
+</body>
+</html>

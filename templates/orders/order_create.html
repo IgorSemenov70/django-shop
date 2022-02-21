@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Оформление заказа' %}{% endblock %}
+</head>
+<body>
+    {% block section %}{% trans 'Ваш заказ' %}{% endblock %}
+    {% block content %}
+        <div>
+            <ul>
+                {% for item in cart %}
+                    <li>
+                        {{ item.quantity }}x {{ item.product.name }}
+                        <span>{{ item.total_price }} ₽</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <p>{% trans 'Итого:' %} {{ cart.get_total_price }} ₽</p>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="{% trans 'Сделать заказ' %}">
+        </form>
+    {% endblock %}
+</body>
+</html>

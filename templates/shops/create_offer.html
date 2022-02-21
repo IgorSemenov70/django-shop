@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Aкции' %}{% endblock %}
+</head>
+<body>
+    {% block section %}{% trans 'Запустить акцию' %}{% endblock %}
+    {% block content %}
+        <form method="post">
+            {% csrf_token %}
+            <p>{% trans 'Название акции:' %} {{ form.name }}</p>
+            <p>{% trans 'Описание:' %} {{ form.description }}</p>
+            <button type="submit">{% trans 'Запустить' %}</button>
+        </form>
+        <p>
+            <a href="{% url 'shops_and_product_list' %}">{% trans 'На главную' %}</a>
+        </p>
+    {% endblock %}
+</body>
+</html>

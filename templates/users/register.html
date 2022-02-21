@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Регистрация' %}{% endblock %}
+</head>
+<body>
+    {% block section %}{% trans 'Регистрация' %}{% endblock %}
+    {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>{% trans 'Имя пользователя' %}: {{ form.username }}</p>
+        <p>{% trans 'Имя' %}: {{ form.first_name }}</p>
+        <p>{% trans 'Фамилия' %}: {{ form.last_name }}</p>
+        <p>{% trans 'Пароль' %}: {{ form.password1 }}</p>
+        <p>{% trans 'Подтверждение пароля' %}: {{ form.password2 }}</p>
+        <p>{% trans 'Электронная почта' %}: {{ form.email }}</p>
+        <p>{% trans 'Телефон' %}: {{ form.phone }}</p>
+        <p>{% trans 'Город' %}: {{ form.city }}</p>
+        <p>{% trans 'Адрес' %}: {{ form.address }}</p>
+        <p>{% trans 'Индекс' %}: {{ form.postal_code }}</p>
+        <p>{% trans 'Баланс' %}:{{ form.balance }}</p>
+        <button type="submit">{% trans 'Зарегистрироваться' %}</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

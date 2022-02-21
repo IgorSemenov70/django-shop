@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Заказ оформлен' %}{% endblock %}
+</head>
+<body>
+    {% block section %}{% trans 'Спасибо за заказ' %}{% endblock %}
+    {% block content %}
+        <p>{% trans 'Ваш заказ был успешно выполнен. Ваш номер заказа' %} <strong>{{ order.id }}</strong>.</p>
+        <a href="{% url 'shops_and_product_list' %}">{% trans 'На главную' %}</a>
+    {% endblock %}
+
+</body>
+</html>

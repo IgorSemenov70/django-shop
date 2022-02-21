@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% trans 'Интернет магазин' %}{% endblock %}
+</head>
+<body>
+    {% block section %}
+        {% if user.is_authenticated %}
+            <h3>{% trans 'Добро пожаловать на сайт покупки товаров' %} {{request.user.username}}</h3>
+            <a href="{% url 'personal-account' %}">{% trans 'Личный кабинет' %}</a>
+            <a href="{% url 'logout' %}">{% trans 'Выйти из аккаунта' %}</a>
+            <p>
+                <a href="{% url 'create_promotion' %}">{% trans 'Запустить акцию' %}</a>
+                <a href="{% url 'create_offer' %}">{% trans 'Выпустить предложение' %}</a>
+            </p>
+        {% else %}
+            <h3>{% trans 'Вы не авторизованы в приложении' %}</h3>
+            <a href="{% url 'login' %}">{% trans 'Войти' %}</a>
+            <a href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
+        {% endif %}
+    {% endblock %}
+    {% block content %}
+        <div>
+            <h3>{% trans 'Магазины' %}</h3>
+            <ul>
+                <li>
+                    <a href="{% url 'shops_and_product_list' %}">{% trans 'Все' %}</a>
+                </li>
+                {% for sh in shops %}
+                    <li>
+                        <a href="{{ sh.get_absolute_url }}">{{ sh.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <p>
+                <a href="{% url 'create_shop' %}">{% trans 'Добавить магазин' %}</a>
+            </p>
+        </div>
+        <div>
+            <h2>
+                {% if shop %}
+                    {% trans 'Товары магазина:' %} {{ shop.name }}
+                {% else %}
+                    {% trans ' Все товары' %}
+                {% endif %}
+            </h2>
+            {% for product in products %}
+                <div>
+                    <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                </div>
+            {% endfor %}
+        </div>
+        <p>
+            <a href="{% url 'create_product' %}">{% trans 'Добавить товар' %}</a>
+        </p>
+        <p>
+            <a href="{% url 'product_statistics' %}">{% trans 'Статистика продажи товаров' %}</a>
+        </p>
+    {% endblock %}
+</body>
+</html>

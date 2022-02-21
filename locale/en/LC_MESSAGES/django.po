@@ -1,0 +1,498 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-21 06:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: orders/apps.py:7 orders/models.py:24
+msgid "Заказы"
+msgstr "Orders"
+
+#: orders/models.py:9 templates/users/personal_account.html:18
+#: templates/users/register.html:18
+msgid "Имя"
+msgstr "Name"
+
+#: orders/models.py:10 templates/users/personal_account.html:19
+#: templates/users/register.html:19
+msgid "Фамилия"
+msgstr "Surname"
+
+#: orders/models.py:11 templates/users/personal_account.html:23
+#: templates/users/register.html:22 users/models.py:9
+msgid "Электронная почта"
+msgstr "Email"
+
+#: orders/models.py:12 templates/users/register.html:25 users/models.py:11
+msgid "Адрес"
+msgstr "Address"
+
+#: orders/models.py:13 templates/users/personal_account.html:24
+#: templates/users/register.html:23 users/models.py:8
+msgid "Телефон"
+msgstr "Phone"
+
+#: orders/models.py:14 templates/users/personal_account.html:22
+#: templates/users/register.html:26 users/models.py:12
+msgid "Индекс"
+msgstr "Postal Code"
+
+#: orders/models.py:15 templates/users/personal_account.html:20
+#: templates/users/register.html:24 users/models.py:10
+msgid "Город"
+msgstr "City"
+
+#: orders/models.py:16 shops/models.py:32
+msgid "Дата создания"
+msgstr "Date of creation"
+
+#: orders/models.py:17
+msgid "Дата оплаты"
+msgstr "Payment date"
+
+#: orders/models.py:18
+msgid "Оплачено"
+msgstr "Paid"
+
+#: orders/models.py:23
+msgid "Заказ"
+msgstr "Order"
+
+#: orders/models.py:39 shops/models.py:29 templates/cart/cart_detail.html:22
+#: templates/shops/create_product.html:18
+msgid "Цена"
+msgstr "Price"
+
+#: orders/models.py:40 shops/models.py:30 templates/cart/cart_detail.html:19
+#: templates/shops/create_product.html:19
+msgid "Количество"
+msgstr "Quantity"
+
+#: orders/models.py:44
+msgid "Информация о заказе"
+msgstr "Order Information"
+
+#: orders/models.py:45
+msgid "Информация о заказах"
+msgstr "Orders Information"
+
+#: shops/apps.py:7 shops/models.py:15
+#: templates/shops/shops_and_product_list.html:30
+msgid "Магазины"
+msgstr "Shops"
+
+#: shops/models.py:9 shops/models.py:51 shops/models.py:66
+msgid "Название"
+msgstr "Name"
+
+#: shops/models.py:14 templates/shops/create_product.html:20
+msgid "Магазин"
+msgstr "Shop"
+
+#: shops/models.py:27 templates/shops/create_product.html:17
+#: templates/shops/product_statistics.html:18
+msgid "Название товара"
+msgstr "Product name"
+
+#: shops/models.py:28 shops/models.py:52 shops/models.py:67
+msgid "Описание"
+msgstr "Description"
+
+#: shops/models.py:31
+msgid "Наличие"
+msgstr "Available"
+
+#: shops/models.py:33
+msgid "Дата обновления"
+msgstr "Update date"
+
+#: shops/models.py:39 templates/cart/cart_detail.html:18
+#: templates/shops/product_detail.html:10
+msgid "Товар"
+msgstr "Product"
+
+#: shops/models.py:40
+msgid "Товары"
+msgstr "Products"
+
+#: shops/models.py:57
+msgid "Акция"
+msgstr "Promotion"
+
+#: shops/models.py:58 templates/users/personal_account.html:30
+msgid "Акции"
+msgstr "Promotions"
+
+#: shops/models.py:72
+msgid "Предложение"
+msgstr "Offer"
+
+#: shops/models.py:73 templates/shops/create_promotion.html:10
+#: templates/users/personal_account.html:46
+msgid "Предложения"
+msgstr "Offers"
+
+#: templates/base.html:25
+msgid "Сменить язык"
+msgstr "Change the language"
+
+#: templates/base.html:33
+msgid "Ваша корзина:"
+msgstr "Your shopping cart:"
+
+#: templates/base.html:35
+msgid "товар"
+msgstr "product"
+
+#: templates/base.html:35
+msgid "на сумму:"
+msgstr "for the amount of:"
+
+#: templates/base.html:39
+msgid "Ваша корзина пуста"
+msgstr "Your shopping cart is empty"
+
+#: templates/cart/cart_detail.html:10
+msgid "Корзина покупателя"
+msgstr "User shopping cart"
+
+#: templates/cart/cart_detail.html:13
+msgid "Ваша корзина покупателя:"
+msgstr "Your shopping cart:"
+
+#: templates/cart/cart_detail.html:20 templates/cart/cart_detail.html:38
+msgid "Удалить"
+msgstr "Remove"
+
+#: templates/cart/cart_detail.html:21
+msgid "Цена за единицу"
+msgstr "Price per unit"
+
+#: templates/cart/cart_detail.html:35
+msgid "Обновить"
+msgstr "Update"
+
+#: templates/cart/cart_detail.html:45 templates/orders/order_create.html:24
+msgid "Итого:"
+msgstr "Total:"
+
+#: templates/cart/cart_detail.html:52
+msgid "Продолжить покупки"
+msgstr "Continue shopping"
+
+#: templates/cart/cart_detail.html:53
+msgid "Оформить заказ"
+msgstr "Place an order"
+
+#: templates/orders/order_create.html:10
+msgid "Оформление заказа"
+msgstr "Making an order"
+
+#: templates/orders/order_create.html:13
+msgid "Ваш заказ"
+msgstr "Your order"
+
+#: templates/orders/order_create.html:29
+msgid "Сделать заказ"
+msgstr "Make an order"
+
+#: templates/orders/order_created.html:10
+msgid "Заказ оформлен"
+msgstr "The order has been placed"
+
+#: templates/orders/order_created.html:13
+msgid "Спасибо за заказ"
+msgstr "Thanks for the order"
+
+#: templates/orders/order_created.html:15
+msgid "Ваш заказ был успешно выполнен. Ваш номер заказа"
+msgstr "Your order has been successfully completed. Your order number"
+
+#: templates/orders/order_created.html:16 templates/shops/create_offer.html:22
+#: templates/shops/create_product.html:23
+#: templates/shops/create_promotion.html:22
+#: templates/shops/product_detail.html:25
+#: templates/shops/product_statistics.html:24
+#: templates/users/personal_account.html:80
+msgid "На главную"
+msgstr "To the main page"
+
+#: templates/shops/create_offer.html:10
+msgid "Aкции"
+msgstr "Promotions"
+
+#: templates/shops/create_offer.html:13
+#: templates/shops/shops_and_product_list.html:19
+msgid "Запустить акцию"
+msgstr "Run to promotion"
+
+#: templates/shops/create_offer.html:17
+msgid "Название акции:"
+msgstr "Name of the promotion:"
+
+#: templates/shops/create_offer.html:18
+#: templates/shops/create_promotion.html:18
+#: templates/shops/product_detail.html:23
+#: templates/users/personal_account.html:36
+#: templates/users/personal_account.html:52
+msgid "Описание:"
+msgstr "Description:"
+
+#: templates/shops/create_offer.html:19
+msgid "Запустить"
+msgstr "Run"
+
+#: templates/shops/create_product.html:10
+msgid "Добавление товара"
+msgstr "Adding a product"
+
+#: templates/shops/create_product.html:13
+#: templates/shops/create_product.html:21
+#: templates/shops/shops_and_product_list.html:60
+msgid "Добавить товар"
+msgstr "Add a product"
+
+#: templates/shops/create_promotion.html:13
+#: templates/shops/shops_and_product_list.html:20
+msgid "Выпустить предложение"
+msgstr "Issue an offer"
+
+#: templates/shops/create_promotion.html:17
+msgid "Название предложения:"
+msgstr "Name of the offer:"
+
+#: templates/shops/create_promotion.html:19
+msgid "Выпустить"
+msgstr "Release"
+
+#: templates/shops/create_shop.html:10
+#: templates/shops/shops_and_product_list.html:42
+msgid "Добавить магазин"
+msgstr "Add a store"
+
+#: templates/shops/create_shop.html:13
+msgid "Добавление магазина"
+msgstr "Adding a store"
+
+#: templates/shops/create_shop.html:17
+msgid "Название магазина"
+msgstr "Store name"
+
+#: templates/shops/create_shop.html:18
+msgid "Добавить"
+msgstr "Add"
+
+#: templates/shops/product_detail.html:15
+msgid "Название товара:"
+msgstr "Product name:"
+
+#: templates/shops/product_detail.html:16
+msgid "Магазин:"
+msgstr "Shop:"
+
+#: templates/shops/product_detail.html:17
+#: templates/users/personal_account.html:68
+msgid "Цена:"
+msgstr "Price:"
+
+#: templates/shops/product_detail.html:20
+#: templates/users/personal_account.html:69
+msgid "Количество:"
+msgstr "Quantity:"
+
+#: templates/shops/product_detail.html:21
+msgid "Добавить в корзину"
+msgstr "Add a store"
+
+#: templates/shops/product_statistics.html:10
+msgid "Статистика товаров"
+msgstr "Product statistics"
+
+#: templates/shops/product_statistics.html:14
+msgid "Наиболее продаваемые товары"
+msgstr "Best-selling products"
+
+#: templates/shops/product_statistics.html:19
+msgid "Куплено"
+msgstr "Purchased"
+
+#: templates/shops/shops_and_product_list.html:10
+msgid "Интернет магазин"
+msgstr "Online store"
+
+#: templates/shops/shops_and_product_list.html:15
+msgid "Добро пожаловать на сайт покупки товаров"
+msgstr "Welcome to the product purchase website"
+
+#: templates/shops/shops_and_product_list.html:16
+#: templates/users/personal_account.html:11
+msgid "Личный кабинет"
+msgstr "Personal account"
+
+#: templates/shops/shops_and_product_list.html:17
+msgid "Выйти из аккаунта"
+msgstr "Log out of your account"
+
+#: templates/shops/shops_and_product_list.html:23
+msgid "Вы не авторизованы в приложении"
+msgstr "You are not logged in to the app"
+
+#: templates/shops/shops_and_product_list.html:24 templates/users/login.html:18
+msgid "Войти"
+msgstr "Login"
+
+#: templates/shops/shops_and_product_list.html:25
+#: templates/users/register.html:10 templates/users/register.html:13
+msgid "Регистрация"
+msgstr "Registration"
+
+#: templates/shops/shops_and_product_list.html:33
+msgid "Все"
+msgstr "All"
+
+#: templates/shops/shops_and_product_list.html:48
+msgid "Товары магазина:"
+msgstr "Store products:"
+
+#: templates/shops/shops_and_product_list.html:50
+msgid " Все товары"
+msgstr "All products"
+
+#: templates/shops/shops_and_product_list.html:63
+msgid "Статистика продажи товаров"
+msgstr "Product sales statistics"
+
+#: templates/users/balance.html:10 templates/users/personal_account.html:27
+msgid "Пополнить баланс"
+msgstr "Top up your balance"
+
+#: templates/users/balance.html:13
+msgid "Пополнение баланса"
+msgstr "Replenishment of the balance"
+
+#: templates/users/balance.html:17
+msgid "Сумма:"
+msgstr "Amount:"
+
+#: templates/users/balance.html:18
+msgid "Пополнить"
+msgstr "Top up"
+
+#: templates/users/login.html:10 templates/users/login.html:13
+msgid "Вход"
+msgstr "Login"
+
+#: templates/users/logout.html:10 templates/users/logout.html:13
+msgid "Выйти"
+msgstr "Logout"
+
+#: templates/users/logout.html:15
+msgid "Вы успешно вышли из под своей учётной записи!"
+msgstr "You have successfully logged out from under your account!"
+
+#: templates/users/personal_account.html:14
+msgid "Личный кабинет программы лояльности"
+msgstr "Personal account of the loyalty program"
+
+#: templates/users/personal_account.html:17
+msgid "Логин"
+msgstr "Login"
+
+#: templates/users/personal_account.html:21
+#, fuzzy
+#| msgid "Адрес"
+msgid "Адресс"
+msgstr "Address"
+
+#: templates/users/personal_account.html:25 users/models.py:14
+msgid "Статус"
+msgstr "Status"
+
+#: templates/users/personal_account.html:26 templates/users/register.html:27
+msgid "Баланс"
+msgstr "Balance"
+
+#: templates/users/personal_account.html:35
+#: templates/users/personal_account.html:51
+msgid "Название:"
+msgstr "Title:"
+
+#: templates/users/personal_account.html:41
+msgid "Акций нет"
+msgstr "There are no shares"
+
+#: templates/users/personal_account.html:57
+msgid "Предложений нет"
+msgstr "There are no shops"
+
+#: templates/users/personal_account.html:62
+msgid "История покупок"
+msgstr "Purchase history"
+
+#: templates/users/personal_account.html:67
+msgid "Товар:"
+msgstr "Product:"
+
+#: templates/users/personal_account.html:75
+msgid "Для просмотра личной информации"
+msgstr "To view personal information"
+
+#: templates/users/personal_account.html:76
+msgid "авторизуйтесь"
+msgstr "log in"
+
+#: templates/users/personal_account.html:76
+msgid "или"
+msgstr "or"
+
+#: templates/users/personal_account.html:77
+msgid "зарегистрируйтесь на сайте"
+msgstr "register on the website"
+
+#: templates/users/register.html:17
+msgid "Имя пользователя"
+msgstr "Username"
+
+#: templates/users/register.html:20
+msgid "Пароль"
+msgstr "Password"
+
+#: templates/users/register.html:21
+msgid "Подтверждение пароля"
+msgstr "Password Confirmation"
+
+#: templates/users/register.html:28
+msgid "Зарегистрироваться"
+msgstr "Register"
+
+#: users/apps.py:7 users/models.py:20
+msgid "Пользователи"
+msgstr "Users"
+
+#: users/models.py:13
+msgid "баланс"
+msgstr "Balance"
+
+#: users/models.py:15
+#, fuzzy
+#| msgid "История покупок"
+msgid "Сумма покупок"
+msgstr "Purchase history"
+
+#: users/models.py:19
+msgid "Пользователь"
+msgstr "User"
