@@ -18,6 +18,14 @@
 ```
 pip install -r requirements.txt
 ```
+## Создание базы данных
+    После установки зависимостей выполните миграции, 
+    перейдя в корневую папку проекта.
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
 ## Запустить локально
 ```
 git clone https://github.com/IgorSemenov70/django-shop
